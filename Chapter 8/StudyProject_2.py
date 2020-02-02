@@ -4,3 +4,8 @@
 
 import shutil, os, StProj_2_Folders.py
 
+searchDir = StProj_2_Folders.params['Директория с файлами для поиска']
+print(searchDir)
+
+fileSearchSize = StProj_2_Folders.params['Искать файлы с размером >=']
+print(fileSearchSize)
