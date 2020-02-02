@@ -11,7 +11,7 @@ fileSearchSize = StProj_2_Folders.params['Искать файлы с разме�
 fileSizeinBytes = int(fileSearchSize) * 2 ** 20
 print('Искать файлы с размером >= ' + str(fileSizeinBytes) + ' байт')
 
-if os.path.exists(searchDir):
+if os.path.exists(searchDir) == True:
     for foldername, subfolders, filenames in os.walk(searchDir):
         for subfolder in subfolders:
             print('')
@@ -26,3 +26,5 @@ if os.path.exists(searchDir):
                 fileListInFile = open('filelist.txt', 'a')
                 fileListInFile.write(fileList)
                 fileListInFile.close()
+else:
+    print('Ошибка!!!Заданной директории не существует')
