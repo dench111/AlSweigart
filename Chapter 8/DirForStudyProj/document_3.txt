@@ -1,0 +1,12 @@
+zabbix
+
+запуск сервера - systemctl start zabbix-server
+логи сервера - cat /var/log/zabbix/zabbix_server.log
+конфиги сервера - vim /etc/zabbix/zabbix_server.conf
+
+
+конфиги агента - vim /etc/zabbix/zabbix_agentd.conf
+логи агента - cat /var/log/zabbix/zabbix_agentd.log
+запуск агента - systemctl start zabbix-agent
+
+вывод настроек без комментариев - cat /etc/zabbix/zabbix_server.conf | grep -Ev "#|^$"
