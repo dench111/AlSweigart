@@ -11,13 +11,18 @@ fileSearchSize = StProj_2_Folders.params['Искать файлы с разме�
 fileSizeinBytes = int(fileSearchSize) * 2 ** 20
 print('Искать файлы с размером >= ' + str(fileSizeinBytes) + ' байт')
 
-for foldername, subfolders, filenames in os.walk(searchDir):
-    for subfolder in subfolders:
-        print('')
-    for filename in filenames:
-        location = foldername + '\\' + filename  # определение полного пути + названия файла
-        # print(location)
-        if os.path.getsize(location) >= fileSizeinBytes:
-            fileSizeinMbytes = os.path.getsize(location) // (2**20)
-            print('Найден файл: ' + location + ' с размером: ' + str(os.path.getsize(location)) +
-                  ' байт или ' + str(fileSizeinMbytes) + ' Мбайта')
+if os.path.exists(searchDir):
+    for foldername, subfolders, filenames in os.walk(searchDir):
+        for subfolder in subfolders:
+            print('')
+        for filename in filenames:
+            location = foldername + '\\' + filename  # определение полного пути + названия файла
+            if os.path.getsize(location) >= fileSizeinBytes:
+                fileSizeinMbytes = os.path.getsize(location) // (2 ** 20)
+                print('Найден файл: ' + location + ' с размером: ' + str(os.path.getsize(location)) +
+                      ' байт/ ' + str(fileSizeinMbytes) + ' Мбайта')
+                fileList = 'Найден файл: ' + location + ' с размером: ' + str(os.path.getsize(location)) + \
+                           ' байт/ ' + str(fileSizeinMbytes) + ' Мбайта \n'
+                fileListInFile = open('filelist.txt', 'a')
+                fileListInFile.write(fileList)
+                fileListInFile.close()
