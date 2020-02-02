@@ -20,9 +20,9 @@ if os.path.exists(searchDir):
             if os.path.getsize(location) >= fileSizeinBytes:
                 fileSizeinMbytes = os.path.getsize(location) // (2 ** 20)
                 print('Найден файл: ' + location + ' с размером: ' + str(os.path.getsize(location)) +
-                      ' байт/ ' + str(fileSizeinMbytes) + ' Мбайта')
+                      ' байт/' + str(fileSizeinMbytes) + ' Мбайт')
                 fileList = 'Найден файл: ' + location + ' с размером: ' + str(os.path.getsize(location)) + \
-                           ' байт/ ' + str(fileSizeinMbytes) + ' Мбайта \n'
+                           ' байт/' + str(fileSizeinMbytes) + ' Мбайт \n'
                 fileListInFile = open('filelist.txt', 'a')
                 fileListInFile.write(fileList)
                 fileListInFile.close()
